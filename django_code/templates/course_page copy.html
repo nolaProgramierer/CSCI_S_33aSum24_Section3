@@ -1,0 +1,16 @@
+{% extends "student/layout.html" %}
+
+{% block body %}
+   <h2>Course: {{ course.dept }} {{ course.course_num }}</h2>
+   <h3>Registered Students</h3>
+   <ol>
+      {% for student in students %}
+      <li>{{ student.lname }}, {{student.fname}}</li>
+      {% empty %}
+      No students registered
+      {% endfor %}
+   </ol>
+
+   <div><a href="{% url 'index' %}">Back to Dashboard</a></div>
+
+{% endblock %}

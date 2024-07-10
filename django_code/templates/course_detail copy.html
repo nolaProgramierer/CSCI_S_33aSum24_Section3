@@ -1,0 +1,24 @@
+{% extends "student/layout.html" %}
+
+{% block body %}
+<h2>Course detail</h2>
+<div id="course-detail-container">
+    <div>
+        Course department: {{course.course_dept}} {{course.course_num}}
+    </div>
+    <div>
+        Course subject: {{course.subject}}
+    </div>
+    <div class="course-description">
+        Course description:  {{course.description}}
+    </div>
+</div>
+<div>
+    <a href="{% url 'edit_course' id=course.id %}">Edit course</a>
+</div>
+<div>
+    <a href="{% url 'remove_course' id=course.id %}">Remove course</a>
+</div>
+
+
+{% endblock %}

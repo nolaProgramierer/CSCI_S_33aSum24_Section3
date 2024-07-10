@@ -1,0 +1,20 @@
+{% extends "student/layout.html" %}
+
+{% block body %}
+   <h2>Add a student</h2>
+   
+   <form action="{% url 'add_student' %}"} method="POST">
+      <div class="form-group">
+         {% csrf_token %}
+         {{ form }}
+      </div>
+      <input type="submit" value="Add Student">
+      
+   </form>
+   <div>
+      <a href="{% url 'index' %}">Back to Home Page</a>
+   </div>
+   
+
+
+{% endblock %}

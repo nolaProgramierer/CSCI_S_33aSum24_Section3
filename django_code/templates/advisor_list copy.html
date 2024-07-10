@@ -1,0 +1,13 @@
+{% extends "student/layout.html" %}
+
+{% block body %}
+
+<ul>
+    {% for advisor in advisors %}
+        <li><a href="{% url 'advisor_detail' id=advisor.id %}">{{advisor.lname}}, {{advisor.fname}}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'new_advisor' %}">Add an advisor</a>
+
+
+{% endblock %}

@@ -12,13 +12,22 @@ cars = [
         {"brand": "Toyota", "trim": "Sienna", "color": "gray", "price": 51200},
 ]
 
-# Sort numbers
+# Sort these numbers
+sorted_nums = sorted(nums)
+print(f"1) {sorted_nums}")
 
+print()
+# Sort in reverse
+rev_sorted_nums = sorted(nums, reverse=True)
+print(f"2) {rev_sorted_nums}")
 
-# Sort numbers in reverse
+print()
+# Sort with key function
+sorted_by_word_length = sorted(composers, key=len, reverse=True)
+print(f"3) {sorted_by_word_length}")
 
+print()
+# Sort with custom key function
+sorted_cars = sorted(cars, key=lambda car: car['price'])
+print(f"4) {sorted_cars}")
 
-# Sort composers by word length in reverse
-
-
-# Sort cars by price (ascending)

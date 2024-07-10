@@ -1,0 +1,23 @@
+{% extends "student/layout.html" %}
+
+{% block body %}
+   <h2>Add an Advisor</h2>
+   
+   <form action="{% url 'new_advisor' %}"} method="POST" class="flex-form">
+      {% csrf_token %}
+      {% for field in form %}
+            <div class="form-group">
+               {{ field.label_tag }}
+               {{ field }}
+            </div>
+         {% endfor %}
+      <input type="submit" value="Add Advisor">
+      
+   </form>
+   <div>
+      <a href="{% url 'advisor_list' %}">Back to Advisor List</a>
+   </div>
+   
+
+
+{% endblock %}
